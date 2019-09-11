@@ -1,0 +1,44 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+section{
+    background: #eeb574;
+    width: 980px;
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    padding: 40px;
+}
+.clearfix:before, .clearfix:after{
+    content: "";
+    display: block;
+}
+.clearfix:after{
+    clear: both;
+}
+article{
+    width: 49%;   
+    float: left;
+    position: relative;
+}
+article:first-child{
+    margin-right: 2%;
+}
+p{
+    overflow: hidden;
+    font-size: 15px;
+    color: #777777;
+}
+h1{
+    font-size: 32px;
+    margin-bottom: 15px;   
+}
+h1, p{
+    width: 65%;
+    margin-left: 35%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+img{
+    position: absolute;
+    top: 0%;
+}

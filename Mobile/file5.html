@@ -1,0 +1,19 @@
+<h1>Example</h1>
+<style>
+    @font-face{ /* 定义自己的字体在web中出现 */
+        font-family: 'my-icon-font';  /*  规定元素的字体系列 */
+        src: url('my-icon-font.ttf'), url('my-icon-font.eot'), url('my-icon-font.woff');
+    }
+    h1{
+        font-weight: normal;
+        text-shadow: 8px 10px 0 rgba(0, 0, 0, .2);
+    }
+    h1::before{  /* 在h1之前 */
+        font-family: 'my-icon-font';
+        content: "\e63f";   /*修改更换图标 */
+        margin-right: 20px;
+    }
+    *{
+        -webkit-tap-highlight-color: rgba(177, 41, 41, 0.884);
+    }
+</style>

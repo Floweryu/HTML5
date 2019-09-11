@@ -1,0 +1,77 @@
+<body>
+    <div id="box1"></div>
+    <div id="box2"><div id="logo"></div></div>
+</body>
+
+<style>
+    body{
+        position: relative;
+    }
+    #logo{
+        width: 250px;
+        height: 200px;
+        background: url(logo-mask.png) center 50% no-repeat;
+        position: absolute;
+        left: 50px;
+    }
+    #box1{
+        width: 300px;
+        height: 200px;
+        background: #edf1ef;
+        border-radius: 10px;
+        border: 5px dashed #27ae60;
+        position: absolute;
+        right: 0;
+    }
+    #box2{
+        width: 300px;
+        height: 200px;
+        background: #edf1ef;
+        border-radius: 10px;
+        border: 5px dashed #27ae60;
+        right: 0;
+    }
+</style>
+<script>
+    // function allowDrop(event){
+    //     event.preventDefault();
+    // }
+    // function getID(id){
+    //     return document.getElementById(id);
+    // }
+    // function drop(box){
+    //     box.appendChild(document.getElementById("logo"));
+    // }
+
+    // var logo = getID("logo");
+    // logo.draggable = true;
+    // var box1 = getID("box1");
+    // box1.ondragover = function(event){   // 解除事件的默认行为
+    //     event.preventDefault();
+    // }
+    // box1.ondrop = drop(box);
+
+    // var box2 = getID("box2");
+    // box2.ondragover = allowDrop(event);
+    // box2.ondrop = drop(event);
+
+    var logo = document.getElementById("logo");     
+    logo.draggable = true;          // 使元素可以拖动
+
+    var box1 = document.getElementById("box1");
+    box1.ondragover = function(event){   // 解除事件的默认行为
+        event.preventDefault();
+    }
+    box1.ondrop = function(event){       //放下logo 时触发ondrop事件
+        box1.appendChild(logo);
+    }
+
+    var box2 = document.getElementById("box2");
+    box2.ondragover = function(event){
+        event.preventDefault();
+    }
+    box2.ondrop = function(event){
+        box2.appendChild(logo);
+    }
+
+</script>

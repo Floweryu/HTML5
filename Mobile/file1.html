@@ -1,0 +1,60 @@
+<div class="comic">
+    <img src="fate.png" alt="Fate">
+    <h1>Fate</h1>
+</div>
+
+<div class="comic">
+    <img src="hulk.png" alt="Hulk">
+    <h1>Hulk</h1>
+</div>
+
+<div class="comic">
+    <img src="superman.png" alt="Superman">
+    <h1>Superman</h1>
+</div>
+
+<div class="comic">
+    <img src="captain.png" alt="Captain">
+    <h1>Captain</h1>
+</div>
+
+<div class="comic">
+    <img src="wonder.png" alt="Wonder">
+    <h1>Wonder</h1>
+</div>
+
+<div class="comic">
+    <img src="ironman.png" alt="Ironman">
+    <h1>Ironman</h1>
+</div>
+
+<style>
+    *{  /* 全局的内外边距清零 */
+        margin: 0;
+        padding: 0;
+    }
+    body{  /*设定背景和字体*/
+        background: #f3f2ef;
+        font-family: sans-serif;
+    }
+    .comic{
+        padding: 30px 0;
+        margin: 10px 4%;
+        width: 44%;
+        text-align: center;  /* 设置元素文本对齐 */
+        float: left;   /* 设置左浮动来形成排列效果 */
+        background: #e5e8e1;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) inset;
+    }
+    .comic:nth-child(even){
+        margin-left: 0;
+    }
+    .comic h1{  /*设置每张图片的标题 */
+        color: #666;
+        font-weight: normal;
+        font-size: 2.5vw;
+    }
+    .comic img{  /* 是图片以百分比动态显示 */
+        width: 20%;
+    }
+</style>

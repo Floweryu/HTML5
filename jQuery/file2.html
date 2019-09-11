@@ -1,0 +1,17 @@
+<h1 class="white big">Title</h1>
+<h1 class="white small">Sub Title</h1>
+<script src="jquery-3.4.1.min.js"></script>
+<script>
+    $('.white').height("200px");
+    $('.white.small').height("100px");
+    $('.white:first').height("30px");
+    $('.white:eq(1)').css("background-color", "#f012be");
+
+</script>
+
+<div data-role="header"></div>
+<div data-role="main" data-theme="red"></div>
+<script>
+    $('[data-role]').html('自定义的data属性');
+    $('[data-theme]').html('自定义的data-theme属性');
+</script>

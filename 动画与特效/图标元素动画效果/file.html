@@ -1,0 +1,56 @@
+<span class="close">Close</span>
+
+<style>
+    @font-face {
+	font-family: 'icon-font';
+	src: url('font/flat-ui-icons-regular.ttf'), url('font/flat-ui-icons-regular.eot'), url('font/flat-ui-icons-regular.woff'), url('font/flat-ui-icons-regular.svg');
+}
+    body{
+        background: #8b8ab3;
+    }
+    .close{
+        font-size: 0px;  /*使sapn中的文字不再显示*/
+        cursor: pointer; /*鼠标指针显示为手型*/
+        display: block;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        border-radius: 50%; /*使背景形状显示为图形*/
+        background: #ffffff;
+        color: #8b8ab3;
+        text-align: center;
+        /*设置居中*/
+        margin:auto;
+        position: absolute;
+        top: 250px;
+        bottom: 250px;
+        left: 250px;
+        right: 250px;
+    }
+    .close::before{
+        content: "\e609";
+        font-family: 'icon-font';
+        font-size: 48px;
+        display: block;
+    }
+    .close:hover::before{
+        -webkit-animation: spin 1s linear 1s 2 alternate;
+        animation: spin 1s linear 1s 2 alternate;
+    }
+    @-webkit-keyframes spin{
+        from{
+            transform: rotate(0deg);
+        }
+        to{
+            transform: rotate(360deg);
+        }
+    }
+    @keyframes spin{
+        from{
+            transform: rotate(0deg);
+        }
+        to{
+            transform: rotate(360deg);
+        }
+    }
+</style>

@@ -1,0 +1,96 @@
+<span class="home icon">Home</span>
+<span class="search icon">Search</span>
+<span class="user icon">User</span>
+<span class="mail icon">Mail</span>
+<span class="chat icon">Chat</span>
+
+<style>
+    @font-face {
+	font-family: 'icon-font';
+	src: url('font/flat-ui-icons-regular.ttf'), url('font/flat-ui-icons-regular.eot'), url('font/flat-ui-icons-regular.woff'), url('font/flat-ui-icons-regular.svg');
+}
+    body{
+        background: #8b8ab3;
+        margin: 150px;
+    }
+    .icon{
+        font-size: 0%;
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        margin-right: 20px;
+        background: #ffffff;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        -webkit-animation:move 1s  cubic-bezier(.62,-0.91,.45,1.97);
+	    animation:move 1s cubic-bezier(.62,-0.91,.45,1.97);
+        -webkit-animation-fill-mode: both;
+    	animation-fill-mode: both; /*backwards*/
+    }
+    .icon::before{
+        font-family: 'icon-font';
+        content: "\e609";
+        font-size: 50px;
+        color: #8b8ab3;
+        text-align: center;
+        box-sizing: border-box;
+        display: block;
+        line-height: 100px;
+    }
+    .home{
+        -webkit-animation-delay:0s;
+        animation-delay:0s;
+    }
+    .search{
+        -webkit-animation-delay:.4s;
+        animation-delay:.4s;
+    }
+    .user{
+        -webkit-animation-delay:.8s;
+        animation-delay:.8s;
+    }
+    .mail{
+        -webkit-animation-delay:1.2s;
+        animation-delay:1.2s;
+    }
+    .chat{
+        -webkit-animation-delay:1.6s;
+        animation-delay: 1.6s;
+    }
+    .home::before{
+        content:"\e62e";
+    }
+    .search::before{
+        content:"\e630";
+    }
+    .user::before{
+        content:"\e631";
+    }
+    .mail::before{
+        content:"\e632";
+    }
+    .chat::before{
+        content:"\e62d";
+    }
+    @-webkit-keyframes move {
+        from {
+            opacity:0;
+            -webkit-transform: translateY(100%);
+        }
+        to {
+            opacity:1;
+            -webkit-transform: translateY(0%);
+        }
+    }
+    @keyframes move {
+        from {
+            opacity:0;
+            transform: translateY(100%);
+        }
+        to {
+            opacity:1;
+            transform: translateY(0%);
+        }
+    }
+</style>

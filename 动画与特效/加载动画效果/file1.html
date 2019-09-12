@@ -1,0 +1,43 @@
+<div class="loader">Loader...</div>
+<style>
+    body{
+        background: #4ea980;
+        margin: 150px;
+    }
+    .loader{
+        text-indent: -9999em;   /*隐藏文字*/
+        position: relative;
+        width: 200px;
+        height: 200px;
+        box-shadow: inset 0 0 0 20px #fff; /*设置内部阴影，颜色白色，宽度为15像素*/
+        border-radius: 50%;  /*使形状轮廓为圆形*/
+    }
+    .loader::before{
+        position: absolute;
+        content: "";
+        width: 100px;
+        height: 200px;
+        left: 100px;  /*圆形宽度为200px，这里取其中间*/
+        border-radius: 0 200px 200px 0;
+        background: #4ea980;
+        animation: load-effect 2s infinite;
+        transform-origin: 0px 100px;
+    }
+    .loader::after{
+        position: absolute;
+        content: "";
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        left: 0;
+        box-shadow: inset 0 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+    @keyframes load-effect{
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+</style>

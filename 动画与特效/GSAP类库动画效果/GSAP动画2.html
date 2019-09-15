@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GSAP动画效果2</title>
+        <meta charset="utf-8">
+        <style type="text/css">
+            html, body{
+                height: 100%;
+            }
+            body{
+                background: #086b99b6;
+                margin: 150px;
+                padding: 0%;
+                position: relative;
+            }
+            #box{
+                width:200px;
+                height: 200px;
+                border: solid 2px #d6e0e0;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div  id="box"></div>
+    </body>
+    <script src="js/TweenMax.min.js"></script>
+    <script type="text/javascript">
+        TweenMax.to(box, 2, {borderRadius:"50%", repeat:-1});
+    </script>
+    
+</html>

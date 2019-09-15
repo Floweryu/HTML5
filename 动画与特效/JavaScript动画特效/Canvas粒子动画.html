@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            body{
+                background:#0c0c0c;
+                margin: 0;
+                padding: 0;
+            }
+            html, body{
+                height: 100%;
+                width: 100%;
+            }
+            #myCanvas{
+                height: 100%;
+                width: 100%;
+                display: block;
+            }
+        </style>
+    </head>
+
+    <body>
+        <canvas id="myCanvas" width="1000" height="600">Your brower does not support the Canvas element.</canvas>
+        <script type="text/javascript">
+            var canvas=document.getElementById("myCanvas");  //获取Canvas元素
+            var context=canvas.getContext("2d"); //返回一个对象，该对象提供了用于在画布上绘图的方法和属性
+            
+            var particles = []; //为粒子创建一个数组
+            for (var i = 0; i < 500; i++)   //生成500个雪花
+            {
+                particles.push({ //设置雪花的初始 x，y 的位置，x，y 方向上的速度，以及雪花的大小、颜色
+                    x: Math.random() * window.innerWidth,
+                    y: Math.random() * window.innerHeight,
+                    vx: (Math.random() * 1 - 0.5),  // （-0.5,0.5）范围
+                    vy: (Math.random() * 1 + 0.5),  // （0.5,1.5）范围
+                    size: 2 + Math.random() * 2,
+                    color: '#' + ('00000' + (Math.random() * 0x1000000<<0).toString(16)).slice(-6)
+                });
+            }
+
+            function timeUpdate(e){
+                context.clearRect(0, 0, window.innerWidth, window.innerHeight);  //清除画布区域
+                var particle;
+                for (var i = 0; i < 500; i++)   //循环所有雪花
+                {
+                    particle = particles[i];
+                    particle.x += particle.vx;
+                    particle.y += particle.vy;
+                    if (particle.x < 0) {
+                        particle.x = window.innerWidth;  // 当雪花移动到窗口左侧以外的地方时，使其显示在窗口最右侧
+                    }
+                    if (particle.x > window.innerWidth) { // 当雪花移动到窗口右侧以外的地方时，使其显示在窗口最左侧
+                        particle.x = 0;
+                    }
+                    if (particle.y >= window.innerHeight) { // 因为速度是大于 0 的，所以不会小于底部
+                        particle.y = 0;  // 当雪花移动到窗口顶部以外时，重新显示在窗口最顶部
+                    }
+                    context.fillStyle = particle.color;  // 设置雪花的颜色
+                    context.beginPath(); //开始绘制雪花
+                    context.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2); // 绘制图形
+                    context.closePath(); //闭合路径
+                    context.fill(); //填充颜色
+                }
+            }
+            setInterval(timeUpdate, 5);  // 每过40毫秒执行一次 timeUpdate 函数
+        </script>
+    </body>
+</html>
+
+

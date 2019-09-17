@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>关闭按钮绘制</title>
+        <meta charset="utf-8">
+        <style type="text/css">
+            body{
+                background: #2ecc71;   
+                margin: 200px;
+            }
+            .close{
+                font-size: 0px;
+                display: block;
+            }
+            .close::before, .close::after{
+                content: '';
+                width: 50px;
+                height: 2px;
+                background: #ffffff;
+                display: block;
+            }
+            .close::after{
+                transform: rotate(-45deg) translateY(-2px);
+            }
+            .close::before{
+                transform: rotate(45deg);
+            }
+        </style>
+    </head>
+    <body>
+        <span class="close">Close Me</span>
+    </body>
+</html>
+
+
+
